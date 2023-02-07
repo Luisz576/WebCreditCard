@@ -14,28 +14,42 @@
             <div class="credit-card" id="credit-card">
                 <!-- NOT FLIPPED -->
                 <div class="credit-card-front">
-                    <h3 id="credit-card-number">0000 0000 0000 0000</h3>
-                    <div class="credit-info">
-                        <p id="credit-card-name">Amazon Apple Microsof</p>
-                        <span id="credit-card-valid">00/00</span>
+                    <div class="credit-card-img">
+                        <img alt="credit card type image" src="./imgs/">
+                    </div>
+                    <div class="credit-card-content">
+                        <h3 id="credit-card-number">0000 0000 0000 0000</h3>
+                        <div class="credit-info">
+                            <p id="credit-card-name">Amazon Apple Microsof
+                                <span id="credit-card-valid">
+                                    <span id="credit-card-valid-m">00</span>
+                                    <span>/</span>
+                                    <span id="credit-card-valid-y">00</span>
+                                </span>
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!-- FLIPPED -->
                 <div class="credit-card-back">
-                    <span id="credit-card-code">000</span>
+                    <div class="credit-card-bar-effect"></div>
+                    <div class="credit-card-bar-code">
+                        <span id="credit-card-code">000</span>
+                    </div>
                 </div>
             </div>
             <div class="credit-card-forms">
                 <form action="">
                     <label for="credit-card-form-number">CARD NUMBER</label>
                     <input type="text" id="credit-card-form-number" maxlength="19" tabindex=1>
-                    <label for="credit-card-form-name">CARD NAME</label>
+                    <label for="credit-card-form-name">CARD NAME (MM/YY)</label>
                     <input type="text" id="credit-card-form-name" maxlength="20" tabindex=2>
-                    <label for="credit-card-form-valid">EXP. DATE (MM/YY):</label>
-                    <input type="text" id="credit-card-form-valid" maxlength="5" tabindex=3>
+                    <label>EXP. DATE:</label>
+                    <input type="text" id="credit-card-form-valid-m" maxlength="2" tabindex=3>
+                    <input type="text" id="credit-card-form-valid-y" maxlength="2" tabindex=4>
                     <label for="credit-card-form-code">CVC</label>
-                    <input type="text" id="credit-card-form-code" maxlength="3" tabindex=4>
-                    <input type="button" value="Comprar" tabindex=5>
+                    <input type="text" id="credit-card-form-code" maxlength="3" tabindex=5>
+                    <input type="button" value="Comprar" tabindex=6>
                 </form>
             </div>
         </section>
