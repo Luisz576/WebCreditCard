@@ -27,6 +27,7 @@ function initCreditCardListeners(){
     const ccValidY = document.getElementById('credit-card-valid-y')
     const ccCodeF = document.getElementById("credit-card-form-code")
     const ccCode = document.getElementById("credit-card-code")
+    const creditTypeImg = document.getElementById('credit-card-type-img')
     if(creditCard && ccNumber && ccNumberF && ccName && ccNameF && ccCode && ccCodeF && ccValidMF && ccValidM && ccValidYF && ccValidY){
         function removeClass(){
             creditCard.classList.remove('flipped')
@@ -50,11 +51,19 @@ function initCreditCardListeners(){
             }
             return new CreditType('None', /^$/)
         }
+        function formatCreditType(component, type){
+            let imgUrl = './imgs/no_credit_card.svg'
+            switch(type){
+                
+            }
+            component.src = imgUrl
+        }
 
         function formatNumber(form, component){
             let value = form.value
             if(!value || value.trim() == ''){
                 value = '0000 0000 0000 0000'
+                form.value = ''
             }else{
                 const valueClear = value.trim().replaceAll(' ', '')
                 value = ''
@@ -72,20 +81,44 @@ function initCreditCardListeners(){
                         value += parts[i].trim()
                     }
                 }
-                form.value = value
+                if(value == ''){
+                    value = '0000 0000 0000 0000'
+                    form.value = ''
+                }else{
+                    form.value = value
+                }
             }
             component.innerText = value
         }
         function formatName(form, component){
-            //TODO
+            value = form.value
+            if(!value || value.trim() == ''){
+                value = 'Invalid Name'
+                form.value = ''
+            }
+            component.innerText = value
         }
         function formatCode(form, component){
             let value = form.value
+            console.log(value)
             if(!value || value.trim() == ''){
                 value = '000'
+                form.value = ''
             }else{
-                value = value.substring(0, 3)
-                form.value = value
+                value = value.trim().replaceAll(' ', '')
+                const v = value.substring(0, 3)
+                value = ''
+                for(let i in v){
+                    if(!isNaN(parseInt(v[i]))){
+                        value += v[i]
+                    }
+                }
+                if(value == ''){
+                    value = '000'
+                    form.value = ''
+                }else{
+                    form.value = value
+                }
             }
             component.innerText = value
         }
@@ -94,7 +127,7 @@ function initCreditCardListeners(){
             formatNumber(ccNumberF, ccNumber)
             formatName(ccNameF, ccName)
             formatCode(ccCodeF, ccCode)
-            const creditCardType = getCreditType(ccNumberF.value)
+            formatCreditType(creditTypeImg, getCreditType(ccNumberF.value))
         })
         return
     }

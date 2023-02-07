@@ -16,9 +16,6 @@ body{
     float: none;
     width: 30vw;
 }
-.credit-info p{
-    width: 100%;
-}
 .credit-card-forms input{
     margin: 8px 0;
     height: 30px;

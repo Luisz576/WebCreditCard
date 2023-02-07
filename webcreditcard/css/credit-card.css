@@ -6,10 +6,13 @@
     background: rgb(96,48,217);
     background: linear-gradient(144deg, rgba(96,48,217,1) 0%, rgba(98,35,197,1) 11%, rgba(158,76,218,1) 34%, rgba(103,146,222,1) 57%, rgba(225,116,108,1) 75%, rgba(93,6,144,1) 100%);
     border-radius: 5px;
+    color: #f0f0f0;
 }
 .credit-card-img{
-    height: 100%;
-    padding: 20px;
+    padding: 0 20px;
+}
+.credit-card-img img{
+    height: 50%;
 }
 .credit-card{
     -webkit-user-select: none;     
@@ -23,15 +26,18 @@
 .credit-card-front h3{
     margin: 0;
     text-align: center;
-    letter-spacing: 0.15rem;
-    font-size: 32px;
-    color: #f0f0f0;
+    letter-spacing: 0.26rem;
+    font-size: 2rem;
     font-weight: normal;
+}
+.credit-info p{
+    margin: 20px auto;
+    width: 90%;
 }
 .credit-card .credit-card-front .credit-info{
     display: flex;
 }
-.credit-card .credit-card-front .credit-info span{
+.credit-card .credit-card-front .credit-info span.right{
     float: right;
 }
 .credit-card-content{
