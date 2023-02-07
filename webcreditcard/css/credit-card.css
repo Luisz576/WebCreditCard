@@ -1,0 +1,24 @@
+.credit-card-back{
+    display: none;
+}
+.credit-card.flipped .credit-card-front{
+    display: none;
+}
+.credit-card.flipped .credit-card-back{
+    display: flex;
+}
+.credit-card-front h3{
+    background-color: blueviolet;
+    margin: 0;
+}
+.credit-card{
+    display: inline-block;
+    width: 30vw;
+    height: 15vw;
+    background-color: tomato;
+}
+.credit-card .credit-card-front .credit-info{
+    display: flex;
+    width: 100%;
+    background-color: chocolate;
+}

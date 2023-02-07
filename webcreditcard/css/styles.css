@@ -1,0 +1,25 @@
+/* CLEAR */
+body{
+    margin: 0;
+}
+/* PAGE */
+.main-page{
+    display: grid;
+    width: 100vw;
+    justify-content: center;
+}
+.main-page h1{
+    font-size: 2rem;
+}
+.credit-card-forms{
+    display: inline-block;
+    float: none;
+    width: 30vw;
+}
+.credit-info p{
+    width: 100%;
+}
+.credit-card-forms input{
+    margin: 8px 0;
+    height: 30px;
+}

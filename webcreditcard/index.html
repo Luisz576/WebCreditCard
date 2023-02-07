@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Credit card</title>
+        <link rel="stylesheet" href="./css/credit-card.css"/>
+        <link rel="stylesheet" href="./css/styles.css"/>
+    </head>
+    <body>
+        <section class="main-page">
+            <h1>Web Credit Card</h1>
+            <div class="credit-card" id="credit-card">
+                <!-- NOT FLIPPED -->
+                <div class="credit-card-front">
+                    <h3 id="credit-card-number">0000 0000 0000 0000</h3>
+                    <div class="credit-info">
+                        <p id="credit-card-name">Amazon Apple Microsof</p>
+                        <span id="credit-card-valid">00/00</span>
+                    </div>
+                </div>
+                <!-- FLIPPED -->
+                <div class="credit-card-back">
+                    <span id="credit-card-code">000</span>
+                </div>
+            </div>
+            <div class="credit-card-forms">
+                <form action="">
+                    <label for="credit-card-form-number">Number:</label>
+                    <input type="number" id="credit-card-form-number">
+                    <label for="credit-card-form-name">Name:</label>
+                    <input type="text" id="credit-card-form-name" maxlength="20">
+                    <label for="credit-card-form-valid">Valid:</label>
+                    <input type="number" id="credit-card-form-valid">
+                    <label for="credit-card-form-code">Code:</label>
+                    <input type="number" id="credit-card-form-code">
+                    <input type="button" value="Comprar">
+                </form>
+            </div>
+        </section>
+        <script src="./js/credit-card.js"></script>
+    </body>
+</html>
