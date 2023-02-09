@@ -16,7 +16,6 @@ const CreditTypes = [
 ]
 
 function initCreditCardListeners(){
-    const creditCard = document.getElementById('credit-card')
     const ccNumberF = document.getElementById("credit-card-form-number")
     const ccNumber = document.getElementById("credit-card-number")
     const ccNameF = document.getElementById("credit-card-form-name")
@@ -28,18 +27,7 @@ function initCreditCardListeners(){
     const ccCodeF = document.getElementById("credit-card-form-code")
     const ccCode = document.getElementById("credit-card-code")
     const creditTypeImg = document.getElementById('credit-card-type-img')
-    if(creditCard && ccNumber && ccNumberF && ccName && ccNameF && ccCode && ccCodeF && ccValidMF && ccValidM && ccValidYF && ccValidY){
-        function removeClass(){
-            creditCard.classList.remove('flipped')
-        }
-        ccCodeF.addEventListener('focus', () => {
-            creditCard.classList.add('flipped')
-        })
-        ccNameF.addEventListener('focus', removeClass)
-        ccValidMF.addEventListener('focus', removeClass)
-        ccValidYF.addEventListener('focus', removeClass)
-        ccNumberF.addEventListener('focus', removeClass)
-
+    if(ccNumber && ccNumberF && ccName && ccNameF && ccCode && ccCodeF && ccValidMF && ccValidM && ccValidYF && ccValidY){
         function getCreditType(number){
             if(number && number.trim() != ''){
                 number = number.trim().replaceAll(' ', '')
@@ -91,16 +79,41 @@ function initCreditCardListeners(){
             component.innerText = value
         }
         function formatName(form, component){
-            value = form.value
+            let value = form.value
             if(!value || value.trim() == ''){
-                value = 'Invalid Name'
+                value = 'INVALID NAME'
                 form.value = ''
+            }else{
+                value = value.toUpperCase()
+                form.value = value
             }
             component.innerText = value
         }
+        function formatValid(mf, m, yf, y){
+            let valueM = mf.value
+            let valueY = yf.value
+            if(!valueM || isNaN(parseInt(valueM))){
+                valueM = "00"
+                mf.value = ''
+            }else{
+                let mv = parseInt(valueM)
+                if(mv < 0){
+                    mv = 0
+                }else if(mv > 12){
+                    mv = 12
+                }
+                valueM = mv < 10 ? "0" + mv : mv
+                mf.value = mv
+            }
+            m.innerText = valueM
+            if(!valueY || isNaN(parseInt(valueY))){
+                valueY = "00"
+                yf.value = ''
+            }
+            y.innerText = valueY
+        }
         function formatCode(form, component){
             let value = form.value
-            console.log(value)
             if(!value || value.trim() == ''){
                 value = '000'
                 form.value = ''
@@ -127,6 +140,7 @@ function initCreditCardListeners(){
             formatNumber(ccNumberF, ccNumber)
             formatName(ccNameF, ccName)
             formatCode(ccCodeF, ccCode)
+            formatValid(ccValidMF, ccValidM, ccValidYF, ccValidY)
             formatCreditType(creditTypeImg, getCreditType(ccNumberF.value))
         })
         return

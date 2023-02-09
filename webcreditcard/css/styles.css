@@ -1,22 +1,149 @@
 /* CLEAR */
 body{
     margin: 0;
+    background-color: #fefefe;
 }
 /* PAGE */
 .main-page{
     display: grid;
     width: 100vw;
-    justify-content: center;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+}
+.credit-card-padding, .credit-form-side{
+    padding-top: 100px;
+}
+.credit-card-div{
+    display: flex;
+    justify-content: right;
 }
 .main-page h1{
     font-size: 2rem;
 }
-.credit-card-forms{
-    display: inline-block;
-    float: none;
-    width: 30vw;
+.credit-form-side{
+    margin-left: 20px;
 }
-.credit-card-forms input{
+.credit-card-form-item{
+    margin-bottom: 20px;
+    width: 60%;
+}
+.credit-card-form-item p, .credit-card-form-item-mult p{
+    margin: 0;
+}
+.credit-card-form-item-mult{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.credit-card-form-item label, .credit-card-form-item-mult label{
+    color: #240A2D;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+.credit-card-form-item input{
     margin: 8px 0;
     height: 30px;
+    border: #240a2d5e solid 1px;
+    border-radius: 3px;
+    padding: 5px;
+    width: 100%;
+}
+.credit-card-form-item input::placeholder{
+    color: #240a2d5e;
+}
+.credit-card-forms-form button{
+    background-color: #240A2D;
+    color: #f0f0f0;
+    border-radius: 5px;
+    width: 100%;
+}
+/*CREDIT-CARD*/
+.credit-card-side{
+    position: relative;
+}
+.credit-card-side-background{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    z-index: -20;
+    background: rgb(32,9,51);
+    background: linear-gradient(130deg, rgba(32,9,51,1) 0%, rgba(68,20,81,1) 23%, rgba(84,35,60,1) 37%, rgba(55,51,120,1) 58%, rgba(32,9,51,1) 100%);
+}
+.credit-card-front{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    background: rgb(96,48,217);
+    background: linear-gradient(144deg, rgba(96,48,217,1) 0%, rgba(98,35,197,1) 11%, rgba(158,76,218,1) 34%, rgba(103,146,222,1) 57%, rgba(225,116,108,1) 75%, rgba(93,6,144,1) 100%);
+    border-radius: 5px;
+    color: #f0f0f0;
+}
+.credit-card-img{
+    padding: 0 20px;
+}
+.credit-card-img img{
+    height: 50%;
+}
+.credit-card{
+    width: 100%;
+    -webkit-user-select: none;     
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+}
+.credit-card-front h3{
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.26rem;
+    font-size: 2rem;
+    font-weight: normal;
+}
+.credit-info p{
+    margin: 20px auto;
+    width: 90%;
+}
+.credit-card-front{
+    margin-right: 200px;
+}
+.credit-card .credit-card-front .credit-info{
+    display: flex;
+}
+.credit-card .credit-card-front .credit-info span.right{
+    float: right;
+}
+.credit-card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.credit-card-back{
+    margin-top: 20px;
+    background-color: #D2D4D8;
+    border-radius: 5px;
+    flex-direction: column;
+    display: flex;
+}
+.credit-card-bar-effect{
+    margin-top: 5%;
+    height: 20%;
+    background-color: #2F2F2F;
+}
+.credit-card-bar-code{
+    margin: auto;
+    background-color: #ACB7BD;
+    border-radius: 5px;
+    height: 20%;
+    width: 80%;
+    display: flex;
+    align-content: flex-end;
+    color: #f0f0f0;
+}
+.credit-card-bar-code span{
+    font-size: 1.4rem;
+    margin: auto 20px auto auto;
 }

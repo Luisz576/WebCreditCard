@@ -5,53 +5,80 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Web Credit card</title>
-        <link rel="stylesheet" href="./css/credit-card.css"/>
         <link rel="stylesheet" href="./css/styles.css"/>
     </head>
     <body>
         <section class="main-page">
-            <h1>Web Credit Card</h1>
-            <div class="credit-card" id="credit-card">
-                <!-- NOT FLIPPED -->
-                <div class="credit-card-front">
-                    <div class="credit-card-img">
-                        <img alt="credit card type image" src="./imgs/no_credit_card.svg" id="credit-card-type-img">
-                    </div>
-                    <div class="credit-card-content">
-                        <h3 id="credit-card-number">0000 0000 0000 0000</h3>
-                        <div class="credit-info">
-                            <p>
-                                <span id="credit-card-name">Amazon Apple Microsof</span>
-                                <span class="right">
-                                    <span id="credit-card-valid-m">00</span>
-                                    <span>/</span>
-                                    <span id="credit-card-valid-y">00</span>
-                                </span>
-                            </p>
+            <div class="credit-card-side">
+                <div class="credit-card-side-background"></div>
+                <div class="credit-card-padding">
+                    <div class="credit-card-div">
+                        <div class="credit-card">
+                            <div class="credit-card-front">
+                                <div class="credit-card-img">
+                                    <img alt="credit card type image" src="./imgs/no_credit_card.svg" id="credit-card-type-img">
+                                </div>
+                                <div class="credit-card-content">
+                                    <h3 id="credit-card-number">0000 0000 0000 0000</h3>
+                                    <div class="credit-info">
+                                        <p>
+                                            <span style="text-transform: uppercase;" id="credit-card-name">Invalid Name</span>
+                                            <span class="right">
+                                                <span id="credit-card-valid-m">00</span>
+                                                <span>/</span>
+                                                <span id="credit-card-valid-y">00</span>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="credit-card-back">
+                                <div class="credit-card-bar-effect"></div>
+                                <div class="credit-card-bar-code">
+                                    <span id="credit-card-code">000</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- FLIPPED -->
-                <div class="credit-card-back">
-                    <div class="credit-card-bar-effect"></div>
-                    <div class="credit-card-bar-code">
-                        <span id="credit-card-code">000</span>
-                    </div>
+            </div> 
+            <div class="credit-form-side">
+                <div class="credit-card-forms">
+                    <form action="" class="credit-card-forms-form">
+                        <div class="credit-card-form-item">
+                            <p>
+                                <label for="credit-card-form-number">CARD NUMBER</label>
+                            </p>
+                            <input type="text" id="credit-card-form-number" placeholder="0000 0000 0000 0000" maxlength="19" tabindex=1>
+                        </div>
+                        <div class="credit-card-form-item">
+                            <p>
+                                <label for="credit-card-form-name">CARD NAME</label>
+                            </p>
+                            <input type="text" id="credit-card-form-name" placeholder="James Example Silva" maxlength="20" tabindex=2>
+                        </div>
+                        <div class="credit-card-form-item-mult">
+                            <div style="flex: 1;">
+                                <p>
+                                    <label>EXP. DATE (MM/YY)</label>
+                                </p>
+                                <input type="text" id="credit-card-form-valid-m" placeholder="MM" maxlength="2" tabindex=3>
+                                <input type="text" id="credit-card-form-valid-y" placeholder="YY" maxlength="2" tabindex=4>
+                            </div>
+                            <div style="flex: 1;">
+                                <p>
+                                    <label for="credit-card-form-code">CVC</label>
+                                </p>
+                                <input type="text" id="credit-card-form-code" placeholder="000" maxlength="3" tabindex=5>
+                            </div>
+                        </div>
+                        <div class="credit-card-form-item">
+                            <button type="submit" tabindex="6">
+                                Confirm
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="credit-card-forms">
-                <form action="">
-                    <label for="credit-card-form-number">CARD NUMBER</label>
-                    <input type="text" id="credit-card-form-number" maxlength="19" tabindex=1>
-                    <label for="credit-card-form-name">CARD NAME</label>
-                    <input type="text" id="credit-card-form-name" maxlength="20" tabindex=2>
-                    <label>EXP. DATE (MM/YY)</label>
-                    <input type="text" id="credit-card-form-valid-m" maxlength="2" tabindex=3>
-                    <input type="text" id="credit-card-form-valid-y" maxlength="2" tabindex=4>
-                    <label for="credit-card-form-code">CVC</label>
-                    <input type="text" id="credit-card-form-code" maxlength="3" tabindex=5>
-                    <input type="button" value="Comprar" tabindex=6>
-                </form>
             </div>
         </section>
         <script src="./js/credit-card.js"></script>
