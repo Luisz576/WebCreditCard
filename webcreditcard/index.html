@@ -9,7 +9,7 @@
     </head>
     <body>
         <section class="main-page">
-            <div class="credit-card-side">
+            <div class="credit-card-side" style="flex: 1;">
                 <div class="credit-card-side-background"></div>
                 <div class="credit-card-padding">
                     <div class="credit-card-div">
@@ -42,34 +42,38 @@
                     </div>
                 </div>
             </div> 
-            <div class="credit-form-side">
+            <div class="credit-form-side" style="flex: 1;">
                 <div class="credit-card-forms">
                     <form action="" class="credit-card-forms-form">
                         <div class="credit-card-form-item">
                             <p>
-                                <label for="credit-card-form-number">CARD NUMBER</label>
-                            </p>
-                            <input type="text" id="credit-card-form-number" placeholder="0000 0000 0000 0000" maxlength="19" tabindex=1>
-                        </div>
-                        <div class="credit-card-form-item">
-                            <p>
-                                <label for="credit-card-form-name">CARD NAME</label>
+                                <label for="credit-card-form-name">CARDHOLDER NAME</label>
                             </p>
                             <input type="text" id="credit-card-form-name" placeholder="James Example Silva" maxlength="20" tabindex=2>
                         </div>
+                        <div class="credit-card-form-item">
+                            <p>
+                                <label for="credit-card-form-number">CARD NUMBER <sup id="credit-card-type"></sup></label>
+                            </p>
+                            <input type="text" id="credit-card-form-number" placeholder="0000 0000 0000 0000" maxlength="19" tabindex=1>
+                        </div>
                         <div class="credit-card-form-item-mult">
-                            <div style="flex: 1;">
-                                <p>
-                                    <label>EXP. DATE (MM/YY)</label>
-                                </p>
-                                <input type="text" id="credit-card-form-valid-m" placeholder="MM" maxlength="2" tabindex=3>
-                                <input type="text" id="credit-card-form-valid-y" placeholder="YY" maxlength="2" tabindex=4>
-                            </div>
-                            <div style="flex: 1;">
-                                <p>
-                                    <label for="credit-card-form-code">CVC</label>
-                                </p>
-                                <input type="text" id="credit-card-form-code" placeholder="000" maxlength="3" tabindex=5>
+                            <div class="credit-card-form-valid" style="flex: 1;">
+                                <div style="flex: 1;">
+                                    <p>
+                                        <label>EXP. DATE (MM/YY)</label>
+                                    </p>
+                                    <div class="credit-card-form-valid-input">
+                                        <input type="text" id="credit-card-form-valid-m" placeholder="MM" maxlength="2" tabindex=3>
+                                        <input type="text" id="credit-card-form-valid-y" placeholder="YY" maxlength="2" tabindex=4>
+                                    </div>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p>
+                                        <label for="credit-card-form-code">CVC</label>
+                                    </p>
+                                    <input style="width: calc(100% - 12px);" type="text" id="credit-card-form-code" placeholder="000" maxlength="3" tabindex=5>
+                                </div>
                             </div>
                         </div>
                         <div class="credit-card-form-item">

@@ -2,7 +2,6 @@ class CreditType{
     constructor(name, validate){
         this.name = name
         this.validate = validate
-        // this.image = image
     }
 }
 
@@ -16,6 +15,7 @@ const CreditTypes = [
 ]
 
 function initCreditCardListeners(){
+    const ccType = document.getElementById("credit-card-type")
     const ccNumberF = document.getElementById("credit-card-form-number")
     const ccNumber = document.getElementById("credit-card-number")
     const ccNameF = document.getElementById("credit-card-form-name")
@@ -26,8 +26,7 @@ function initCreditCardListeners(){
     const ccValidY = document.getElementById('credit-card-valid-y')
     const ccCodeF = document.getElementById("credit-card-form-code")
     const ccCode = document.getElementById("credit-card-code")
-    const creditTypeImg = document.getElementById('credit-card-type-img')
-    if(ccNumber && ccNumberF && ccName && ccNameF && ccCode && ccCodeF && ccValidMF && ccValidM && ccValidYF && ccValidY){
+    if(ccType && ccNumber && ccNumberF && ccName && ccNameF && ccCode && ccCodeF && ccValidMF && ccValidM && ccValidYF && ccValidY){
         function getCreditType(number){
             if(number && number.trim() != ''){
                 number = number.trim().replaceAll(' ', '')
@@ -39,12 +38,8 @@ function initCreditCardListeners(){
             }
             return new CreditType('None', /^$/)
         }
-        function formatCreditType(component, type){
-            let imgUrl = './imgs/no_credit_card.svg'
-            switch(type){
-                
-            }
-            component.src = imgUrl
+        function formatCreditType(type){
+            ccType.innerText = "(" + type.name + ")"
         }
 
         function formatNumber(form, component){
@@ -141,7 +136,7 @@ function initCreditCardListeners(){
             formatName(ccNameF, ccName)
             formatCode(ccCodeF, ccCode)
             formatValid(ccValidMF, ccValidM, ccValidYF, ccValidY)
-            formatCreditType(creditTypeImg, getCreditType(ccNumberF.value))
+            formatCreditType(getCreditType(ccNumberF.value))
         })
         return
     }
